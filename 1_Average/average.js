@@ -11,4 +11,4 @@ function average(x, y){
 // console.log(average(15, 5)); //outputs 10
 // console.log(average(25, 10))
 
-console.log(average(140, 140))
+// console.log(average(140, 140))
