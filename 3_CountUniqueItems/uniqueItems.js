@@ -5,23 +5,37 @@ Use the following provided code:
     */
 
 function countUniqueItems(arr){
-    let unique = 1;
+    let unique = 0;
 
-    for (let i = 1; i < arr.length; i++){
-        let j = 0;
-        for (j = 0; j < i; j++){
-            if (arr[i] === arr[j]){
-                break;
-            } 
-        }
+    //check if array is not empty
+    if (arr.length != 0){
+        //set unique to 1, since there should be at least one unique item that exists
+        unique = 1;
 
-        if (i === j){
-            unique++;
+        //start traversing array, excluding the first element
+        for (let i = 1; i < arr.length; i++){
+            //reset second traversal of array
+            let j = 0;
+            //traverse from (i - 1)th element
+            for (j = 0; j < i; j++){
+                //if matching element values exist, break from current iteration
+                if (arr[i] === arr[j]){
+                    break;
+                } 
+            }
+
+            //if no matching elements were found and at the end of array
+            if (i === j){
+                //increment unique count
+                unique++;
+            }
         }
     }
+
+    //return total unique elements in array
     return unique;
 }
 
-myArray= ["hi", "hello", "welcome", "hello"];
+// myArray= ["hi", "hello", "welcome", "hello"];
 
-console.log(countUniqueItems(myArray));
+// console.log(countUniqueItems(myArray));
