@@ -5,11 +5,23 @@ Use the following provided code:
     */
 
 function countUniqueItems(arr){
-    let count = 0;
+    let unique = 1;
 
+    for (let i = 1; i < arr.length; i++){
+        let j = 0;
+        for (j = 0; j < i; j++){
+            if (arr[i] === arr[j]){
+                break;
+            } 
+        }
+
+        if (i === j){
+            unique++;
+        }
+    }
+    return unique;
 }
 
-let array=['hi', 'Daniel', 'hi'];
+myArray= ["hi", "hello", "welcome", "hello"];
 
-let name = "Dear Daniel";
-console.log(countUniqueItems(array));
+console.log(countUniqueItems(myArray));
